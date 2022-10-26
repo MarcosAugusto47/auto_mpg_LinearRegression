@@ -1,4 +1,3 @@
-import json
 import pandas as pd
 from flask import Flask, jsonify, request
 from utilities import predict_mpgl
@@ -16,8 +15,6 @@ def predict():
     except ValueError:
         data = pd.DataFrame([data])
 
-    print(data)
-
     if list(data.columns) == covariables:
         try:
             sample = data.values
@@ -25,15 +22,12 @@ def predict():
             return jsonify({'error':'Invalid input'})
         
         predictions = predict_mpgl(sample)
-        print(predictions)
         
         try:
-            print("111")
             result = jsonify(predictions)
         except TypeError as e:
-            print("222")
             return jsonify({'error':str(e)})
-        print("333")
+        
         return result
 
     else:

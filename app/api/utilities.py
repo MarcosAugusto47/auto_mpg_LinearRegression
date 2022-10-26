@@ -8,8 +8,6 @@ def predict_mpgl(new_data):
     # Predict diabetes
     predictions = model.predict(new_data)
 
-    #pred_to_label = {0: 'Negative', 1: 'Positive'}
-
     # Make a list of predictions
     data = []
     for t, pred in zip(new_data, predictions):
