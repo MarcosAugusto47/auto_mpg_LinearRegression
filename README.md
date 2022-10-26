@@ -1,4 +1,4 @@
-# diabetes-classification
+# Fuel consumption in miles per gallon
 Machine Learning application that predicts the log of miles per gallon compsution of a car. The dataset used and some description can be found at https://archive.ics.uci.edu/ml/datasets/auto+mpg.
 
 The application returns the prediction via a POST request, that needs to be structured like this:
